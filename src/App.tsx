@@ -14,7 +14,7 @@ function App() {
   return (
     <ChakraProvider>
       <div className="page-container">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Header />
           <Route exact path="/" component={Home} />
           <Route path="/check" component={Check} />
