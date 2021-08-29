@@ -1,75 +1,13 @@
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  Flex,
-  Radio,
-  RadioGroup,
-  Stack,
-} from '@chakra-ui/react'
+import { Button, Center, Container, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
-
 import { Stepper } from 'react-form-stepper'
 import { useHistory } from 'react-router'
-
-interface Question {
-  id: number
-  content: string
-}
+import Question from 'views/components/question/Question'
+import QuestionType from 'types/question'
+import questions from 'data/questions'
 
 const Check = () => {
   const history = useHistory()
-  const questions: Question[] = [
-    {
-      id: 1,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 2,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 3,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 4,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 5,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 6,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 7,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 8,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 9,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 10,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 11,
-      content: '自分は涙もろい人間だと思う',
-    },
-    {
-      id: 12,
-      content: '自分は涙もろい人間だと思う',
-    },
-  ]
   const questionPerStep = 5
   const maxStep = Math.ceil(questions.length / questionPerStep)
   const next = () => {
@@ -93,7 +31,7 @@ const Check = () => {
     if (1 >= step) return false
     return true
   }
-  const isCurrentQuestion = (question: Question) => {
+  const isCurrentQuestion = (question: QuestionType) => {
     const start = questionPerStep * (step - 1) + 1
     const end = start + questionPerStep - 1
     return question.id >= start && question.id <= end
@@ -105,6 +43,15 @@ const Check = () => {
   }
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
+
+  type Answers = {
+    [key: number]: string
+  }
+  let initialAnswers: Answers = {}
+  for (let i = 1; i <= questions.length; i++) {
+    initialAnswers[i] = '3'
+  }
+  const [answers, setAnswers] = useState(initialAnswers)
 
   const styleConfig = {
     completedBgColor: '#005731',
@@ -125,20 +72,12 @@ const Check = () => {
 
       {questions.filter(isCurrentQuestion).map((question) => {
         return (
-          <Box mt="7" key={question.id}>
-            <Box fontWeight="bold">
-              {question.id}: {question.content}
-            </Box>
-            <RadioGroup colorScheme="green" defaultValue="3" mt="4" size="md">
-              <Stack spacing={3} direction="row">
-                <Radio value="1">全くあてはまらない</Radio>
-                <Radio value="2">あまりあてはまらない</Radio>
-                <Radio value="3">どちらとも言えない</Radio>
-                <Radio value="4">少しあてはまる</Radio>
-                <Radio value="5">とてもあてはまる</Radio>
-              </Stack>
-            </RadioGroup>
-          </Box>
+          <Question
+            key={question.id}
+            question={question}
+            setAnswers={setAnswers}
+            answers={answers}
+          ></Question>
         )
       })}
       <Flex justify="space-between" mt="5">
