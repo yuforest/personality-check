@@ -39,7 +39,18 @@ const Check = () => {
 
   const submit = () => {
     setLoading(true)
-    setTimeout(() => history.push('/result'), 5000)
+    setTimeout(
+      () =>
+        history.push({
+          pathname: '/result',
+          state: { type: calculatePersonalityType() },
+        }),
+      5000,
+    )
+  }
+
+  const calculatePersonalityType = () => {
+    return 1
   }
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
