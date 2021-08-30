@@ -1,10 +1,12 @@
-import { Center } from '@chakra-ui/react'
+import { Box, Center } from '@chakra-ui/react'
 import './Footer.scss'
 
 const Footer = () => {
   return (
-    <Center bg="gray" h="80px" color="white" className="footer">
-      ©︎{new Date().getFullYear()} Personality Check All rights reserved.
+    <Center className="footer">
+      <Box bg="gray" p="3" color="white" mt="4" w="100%">
+        ©︎{new Date().getFullYear()} Personality Check All rights reserved.
+      </Box>
     </Center>
   )
 }

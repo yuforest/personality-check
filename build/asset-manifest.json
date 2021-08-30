@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/personality-check/static/css/main.289ec7fe.chunk.css",
-    "main.js": "/personality-check/static/js/main.41054e5c.chunk.js",
-    "main.js.map": "/personality-check/static/js/main.41054e5c.chunk.js.map",
+    "main.css": "/personality-check/static/css/main.20879c45.chunk.css",
+    "main.js": "/personality-check/static/js/main.b4fab267.chunk.js",
+    "main.js.map": "/personality-check/static/js/main.b4fab267.chunk.js.map",
     "runtime-main.js": "/personality-check/static/js/runtime-main.04629a13.js",
     "runtime-main.js.map": "/personality-check/static/js/runtime-main.04629a13.js.map",
     "static/js/2.11ec4793.chunk.js": "/personality-check/static/js/2.11ec4793.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.603d9edd.chunk.js": "/personality-check/static/js/3.603d9edd.chunk.js",
     "static/js/3.603d9edd.chunk.js.map": "/personality-check/static/js/3.603d9edd.chunk.js.map",
     "index.html": "/personality-check/index.html",
-    "static/css/main.289ec7fe.chunk.css.map": "/personality-check/static/css/main.289ec7fe.chunk.css.map",
+    "static/css/main.20879c45.chunk.css.map": "/personality-check/static/css/main.20879c45.chunk.css.map",
     "static/js/2.11ec4793.chunk.js.LICENSE.txt": "/personality-check/static/js/2.11ec4793.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.04629a13.js",
     "static/js/2.11ec4793.chunk.js",
-    "static/css/main.289ec7fe.chunk.css",
-    "static/js/main.41054e5c.chunk.js"
+    "static/css/main.20879c45.chunk.css",
+    "static/js/main.b4fab267.chunk.js"
   ]
 }

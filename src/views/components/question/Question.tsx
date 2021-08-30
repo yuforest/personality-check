@@ -26,7 +26,7 @@ const Question = ({
         mt="4"
         size="md"
       >
-        <Stack spacing={3} direction="row">
+        <Stack spacing={3} direction="column">
           <Radio value="1">全くあてはまらない</Radio>
           <Radio value="2">あまりあてはまらない</Radio>
           <Radio value="3">どちらとも言えない</Radio>
