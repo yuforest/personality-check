@@ -4,6 +4,7 @@ import { Stepper } from 'react-form-stepper'
 import { useHistory } from 'react-router'
 import Question from 'views/components/question/Question'
 import QuestionType from 'types/question'
+import Result from 'types/result'
 import questions from 'data/questions'
 
 const Check = () => {
@@ -49,8 +50,44 @@ const Check = () => {
     )
   }
 
+  const results: Result[] = [
+    {
+      name: 'optimist',
+      score: 0,
+    },
+    {
+      name: 'rationalist',
+      score: 0,
+    },
+    {
+      name: 'patient',
+      score: 0,
+    },
+    {
+      name: 'dreamer',
+      score: 0,
+    },
+    {
+      name: 'cautious',
+      score: 0,
+    },
+  ]
+
   const calculatePersonalityType = () => {
-    return 1
+    for (let i = 1; i <= questions.length; i++) {
+      const type: string = questions[i - 1].type
+      const result = results.find((result) => result.name === type)
+      if (result !== undefined) {
+        result.score += parseInt(answers[i])
+      }
+    }
+    let maxResult = results[0]
+    for (let i = 0; i < results.length; i++) {
+      if (maxResult.score < results[i].score) {
+        maxResult = results[i]
+      }
+    }
+    return maxResult.name
   }
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)

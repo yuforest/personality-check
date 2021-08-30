@@ -10,9 +10,6 @@ const Header = () => {
         <Box p="4" fontWeight="bold" color="white">
           <Link to="/check">Check</Link>
         </Box>
-        <Box p="4" fontWeight="bold" color="white">
-          <Link to="/result">Result</Link>
-        </Box>
       </Flex>
     </Flex>
   )
