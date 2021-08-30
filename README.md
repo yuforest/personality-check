@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo
+
+This app is published on Github Pages.
+URL is below.
+https://yuforest.github.io/personality-check/
+
 ## Available Scripts
 
 In the project directory, you can run:
